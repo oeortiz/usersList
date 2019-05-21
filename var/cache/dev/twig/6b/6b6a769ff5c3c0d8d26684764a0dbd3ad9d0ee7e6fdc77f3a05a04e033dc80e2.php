@@ -98,6 +98,6 @@ class __TwigTemplate_2a283971088cb27393d9777e41315f3a73d2e4fe8b5207ba748c9755000
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/header.html.twig");
     }
 }

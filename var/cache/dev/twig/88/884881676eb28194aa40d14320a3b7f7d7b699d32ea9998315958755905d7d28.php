@@ -64,6 +64,6 @@ class __TwigTemplate_1536512afc86ae80ac3dec45b0cf8f750d85ed0f4851f7ab5a4ba108c3f
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'search']) ?>
-", "@Framework/Form/search_widget.html.php", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/search_widget.html.php");
+", "@Framework/Form/search_widget.html.php", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/search_widget.html.php");
     }
 }

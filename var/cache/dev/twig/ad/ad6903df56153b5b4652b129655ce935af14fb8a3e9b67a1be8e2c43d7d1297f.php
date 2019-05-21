@@ -64,6 +64,6 @@ class __TwigTemplate_f8d104aeac0f5e25bbf324a827ffbb7ceb05d5b7181f688e40788936c14
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'text']) ?> %
-", "@Framework/Form/percent_widget.html.php", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/percent_widget.html.php");
+", "@Framework/Form/percent_widget.html.php", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/percent_widget.html.php");
     }
 }

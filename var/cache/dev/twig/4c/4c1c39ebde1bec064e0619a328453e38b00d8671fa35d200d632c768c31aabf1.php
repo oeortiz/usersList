@@ -265,6 +265,6 @@ class __TwigTemplate_7faf326617f18f634ddbc90a6d7e71137fb265963e619046c98e553d9d9
     }
 </style>
 {% endblock %}
-", "default/index.html.twig", "/Users/gsoft/Projects/simple_crud/app/Resources/views/default/index.html.twig");
+", "default/index.html.twig", "/Users/gsoft/Projects/comforce/app/Resources/views/default/index.html.twig");
     }
 }

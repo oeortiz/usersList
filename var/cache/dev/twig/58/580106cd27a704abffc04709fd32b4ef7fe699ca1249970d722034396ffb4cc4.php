@@ -172,6 +172,6 @@ class __TwigTemplate_a88b1630fa48bd38906906e28b48952e699a2c06aba6f96dd15a26f44ca
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/gsoft/Projects/comforce/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

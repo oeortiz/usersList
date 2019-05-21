@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 use AppBundle\Entity\User;
+use AppBundle\Entity\TipoUsuario;
 
 class UserController extends Controller
 {
@@ -98,7 +99,9 @@ class UserController extends Controller
 
 		$id = $request->query->get('id');
 	    if (is_null($id) || $id == 'NULL') {
-	    	$user = new User();
+			$user = new User();
+			$tipoUsuario = $this->getDoctrine()->getRepository(TipoUsuario::class)->find(1);
+			$user->setTipoUsuarioId($tipoUsuario);
 	    }else{
 	    	$user = $this->getDoctrine()
 		        ->getRepository(User::class)

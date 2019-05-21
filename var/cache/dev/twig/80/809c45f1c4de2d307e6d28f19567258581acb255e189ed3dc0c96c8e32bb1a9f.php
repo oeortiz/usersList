@@ -1171,6 +1171,6 @@ class __TwigTemplate_371f252c71c5e350e64b99a4d181aef561c77bea47387609b94c2f120c8
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig");
     }
 }

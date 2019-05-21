@@ -107,6 +107,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/proceso')) {
+            // proceso_index
+            if ('/proceso' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\ProcesoController::indexAction',  '_route' => 'proceso_index',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_proceso_index;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'proceso_index'));
+                }
+
+                return $ret;
+            }
+            not_proceso_index:
+
+            // proceso_new
+            if ('/proceso/new' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\ProcesoController::newAction',  '_route' => 'proceso_new',);
+            }
+
+            // proceso_show
+            if (preg_match('#^/proceso/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'proceso_show']), array (  '_controller' => 'AppBundle\\Controller\\ProcesoController::showAction',));
+            }
+
+            // proceso_edit
+            if (preg_match('#^/proceso/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'proceso_edit']), array (  '_controller' => 'AppBundle\\Controller\\ProcesoController::editAction',));
+            }
+
+            // proceso_delete
+            if (preg_match('#^/proceso/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'proceso_delete']), array (  '_controller' => 'AppBundle\\Controller\\ProcesoController::deleteAction',));
+            }
+
+        }
+
         // homepage
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'AppBundle\\Controller\\UserController:index',  '_route' => 'homepage',);
@@ -151,74 +189,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         if ('/checkUserPropertyExists' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\UserController::propertyExist',  '_route' => 'checkUserPropertyExists',);
         }
-
-        // mail_index
-        if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'AppBundle\\Controller\\MailController::indexAction',  '_route' => 'mail_index',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_mail_index;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'mail_index'));
-            }
-
-            if (!in_array($canonicalMethod, ['GET'])) {
-                $allow = array_merge($allow, ['GET']);
-                goto not_mail_index;
-            }
-
-            return $ret;
-        }
-        not_mail_index:
-
-        // mail_show
-        if (preg_match('#^/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
-            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'mail_show']), array (  '_controller' => 'AppBundle\\Controller\\MailController::showAction',));
-            if (!in_array($canonicalMethod, ['GET'])) {
-                $allow = array_merge($allow, ['GET']);
-                goto not_mail_show;
-            }
-
-            return $ret;
-        }
-        not_mail_show:
-
-        // mail_new
-        if ('/new' === $pathinfo) {
-            $ret = array (  '_controller' => 'AppBundle\\Controller\\MailController::newAction',  '_route' => 'mail_new',);
-            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                $allow = array_merge($allow, ['GET', 'POST']);
-                goto not_mail_new;
-            }
-
-            return $ret;
-        }
-        not_mail_new:
-
-        // mail_edit
-        if (preg_match('#^/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
-            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'mail_edit']), array (  '_controller' => 'AppBundle\\Controller\\MailController::editAction',));
-            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                $allow = array_merge($allow, ['GET', 'POST']);
-                goto not_mail_edit;
-            }
-
-            return $ret;
-        }
-        not_mail_edit:
-
-        // mail_delete
-        if (preg_match('#^/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
-            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'mail_delete']), array (  '_controller' => 'AppBundle\\Controller\\MailController::deleteAction',));
-            if (!in_array($requestMethod, ['DELETE'])) {
-                $allow = array_merge($allow, ['DELETE']);
-                goto not_mail_delete;
-            }
-
-            return $ret;
-        }
-        not_mail_delete:
 
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();

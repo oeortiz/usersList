@@ -131,6 +131,6 @@ class __TwigTemplate_3d02c82b5e7d2e56cb03af315d8eb6e38c030644b8f654c3938e9d3b929
         </li>
     </ul>
 {% endblock %}
-", "mail/new.html.twig", "/Users/gsoft/Projects/simple_crud/app/Resources/views/mail/new.html.twig");
+", "mail/new.html.twig", "/Users/gsoft/Projects/comforce/app/Resources/views/mail/new.html.twig");
     }
 }

@@ -55,6 +55,24 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="TipoUsuario", inversedBy="usuarios")
+     * @ORM\JoinColumn(name="tipo_usuario_id", referencedColumnName="id")
+     */
+    private $tipo_usuario_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Proceso", inversedBy="solicitantes")
+     * @ORM\JoinColumn(name="solicitantes", referencedColumnName="id")
+     */
+    private $solicitantes;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Proceso", inversedBy="aprobadores")
+     * @ORM\JoinColumn(name="aprobadores", referencedColumnName="id")
+     */
+    private $aprobadores;
+
 
     /**
      * Get id
@@ -185,6 +203,24 @@ class User implements UserInterface
         return $this->password;
     }
 
+    /**
+     * Set tipo_usuario_id
+     *
+     * @param string $tipo_usuario_id
+     *
+     * @return User
+     */
+    public function setTipoUsuarioId($tipo_usuario_id)
+    {
+        $this->tipo_usuario_id = $tipo_usuario_id;
+
+        return $this;
+    }
+
+    public function getTipoUsuarioId(){
+        return $this->tipo_usuario_id;
+    }
+
 
     /**
      * Set Password
@@ -222,7 +258,6 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        jodre();
         return ['ROLE_USER'];
     }
 

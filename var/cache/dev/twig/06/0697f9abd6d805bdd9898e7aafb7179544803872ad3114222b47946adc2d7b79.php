@@ -1680,6 +1680,6 @@ class __TwigTemplate_b1c0b9ceb1094f722d352658cab7bdb0088397fb11a30b50afe9de3dfc7
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/gsoft/Projects/comforce/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

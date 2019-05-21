@@ -179,6 +179,6 @@ class __TwigTemplate_af2bc14e9489437d9520f275eefdc0b6b38d6749f032404cc335e24ccbc
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces_text.html.twig");
     }
 }

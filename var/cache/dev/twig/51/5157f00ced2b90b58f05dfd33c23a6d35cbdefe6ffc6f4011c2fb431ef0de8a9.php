@@ -72,6 +72,6 @@ class __TwigTemplate_eb38b5ea1a847304d08a1be819b879aa369601789cf8ecb821c3d2c1b2c
     <?php echo \$view['form']->errors(\$form) ?>
     <?php echo \$view['form']->widget(\$form) ?>
 </div>
-", "@Framework/Form/form_row.html.php", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_row.html.php");
+", "@Framework/Form/form_row.html.php", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_row.html.php");
     }
 }

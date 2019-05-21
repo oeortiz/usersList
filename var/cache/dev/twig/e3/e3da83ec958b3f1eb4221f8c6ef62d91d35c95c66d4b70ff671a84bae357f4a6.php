@@ -182,6 +182,6 @@ class __TwigTemplate_376b043c0633d020eae157381ea47711072ee2f8532805ce639b115a633
         </div>
     </div>
 </div>
-", "@Twig/Exception/traces.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces.html.twig");
+", "@Twig/Exception/traces.html.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces.html.twig");
     }
 }

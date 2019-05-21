@@ -80,6 +80,6 @@ class __TwigTemplate_680af1aa9646750f377df17df39d8ce27762a21045c4043bd5e2a9c488d
 {{ status_code }} {{ status_text }}
 
 */
-", "@Twig/Exception/error.css.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.css.twig");
+", "@Twig/Exception/error.css.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.css.twig");
     }
 }

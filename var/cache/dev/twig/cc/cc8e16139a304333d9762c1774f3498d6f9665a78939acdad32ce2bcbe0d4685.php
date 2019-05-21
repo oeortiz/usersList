@@ -838,6 +838,6 @@ class __TwigTemplate_d1b929414f59b95e20e49bae01d6e69079c037d52b2563a300418ea6b6f
         {% endif %}
     {% endfor %}
 {% endblock %}
-", "@Swiftmailer/Collector/swiftmailer.html.twig", "/Users/gsoft/Projects/simple_crud/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
+", "@Swiftmailer/Collector/swiftmailer.html.twig", "/Users/gsoft/Projects/comforce/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
     }
 }

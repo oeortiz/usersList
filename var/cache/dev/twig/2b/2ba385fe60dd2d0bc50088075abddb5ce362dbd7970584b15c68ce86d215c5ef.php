@@ -68,6 +68,6 @@ class __TwigTemplate_a85795be9d79b6284e8c5bf340c9a157ea58ab79dd1ece800df36d0edcc
         return new Source("<?php foreach (\$form as \$child) : ?>
     <?php echo \$view['form']->row(\$child) ?>
 <?php endforeach; ?>
-", "@Framework/Form/form_rows.html.php", "/Users/gsoft/Projects/simple_crud/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_rows.html.php");
+", "@Framework/Form/form_rows.html.php", "/Users/gsoft/Projects/comforce/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views/Form/form_rows.html.php");
     }
 }
