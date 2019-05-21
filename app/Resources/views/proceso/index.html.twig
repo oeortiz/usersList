@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Procesos</h1>
+            <br>
+            <a href="{{ path('proceso_new') }}"><button id="create-process" class="btn">Crear Nuevo</button></a>
+            <br>
+            <br>
+            <br>
+            <div style="padding: 3.5em;">
+    <div style="padding: 3.5em;">
+
+        <table id="myTable">
+            <thead>
+                <tr>
+                    
+                    <th>Numero Proceso</th>
+                    <th>Descripcion</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Municipio</th>
+                    <th>Documento</th>
+                    <th>Estado</th>
+                    {# <th>Usuario</th> #}
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for proceso in procesos %}
+                <tr>
+                    {# <td><a href="{{ path('proceso_show', { 'id': proceso.id }) }}">{{ proceso.id }}</a></td> #}
+                    <td>{{ proceso.numeroProceso }}</td>
+                    <td>{{ proceso.descripcion }}</td>
+                    <td>{% if proceso.fechaInicio %}{{ proceso.fechaInicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if proceso.fechaFin %}{{ proceso.fechaFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ proceso.municipioId }}</td>
+                    <td>{{ proceso.documento }}</td>
+                    <td>{{ proceso.estadoProcesoId }}</td>
+                    {# <td>{{ proceso.usuarioId }}</td> #}
+                    <td>                            
+                        <a href="{{ path('proceso_show', { 'id': proceso.id }) }}">Ver</a>
+                        <a href="{{ path('proceso_edit', { 'id': proceso.id }) }}">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+
+{% block stylesheets %} 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        var dataRow;
+        $(document).ready( function () {
+            $( ".btn" ).button()
+            var idProyecto;
+            table = $('#myTable').DataTable({
+                "language": {
+                    paginate: {
+                        first:    '«',
+                        previous: '‹',
+                        next:     '›',
+                        last:     '»'
+                    },
+                    "lengthMenu": "Mostrando _MENU_ registros por pagina",
+                    "zeroRecords": "Sin resultados - disculpas",
+                    "info": "Viendo pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "Ningun registro disponible",
+                    "infoFiltered": "(filtrados de _MAX_)",
+                    "sSearch": "Buscar",
+                    "dsfasdf":"siguiente"
+                }
+
+            });
+
+            $('#myTable tbody').on( 'click', 'tr', function () {
+
+                
+                dataRow = table.row( this ).data();
+                idProyecto = dataRow[0];
+
+                // $("#myTable tbody tr").removeClass('selected');
+                // $("#id").val(dataRow[0]);
+                // $("#identification").val(dataRow[1]);
+                // $("#first_name").val(dataRow[2]);
+                // $("#last_name").val(dataRow[3]);
+                // $("#email").val(dataRow[4]);
+                // $("#phone").val(dataRow[5]);
+                // if(dataRow[6] == "SI" )
+                //     $("#is_active").prop('checked', true);
+                // else
+                //     $("#is_active").prop('checked', false);
+
+                // $("#password").val(dataRow[1]);
+
+
+                $(this).addClass('selected');
+
+            });
+        });
+    </script>
+{% endblock %}

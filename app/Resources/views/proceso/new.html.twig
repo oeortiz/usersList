@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %} 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+        $( "#accordion" ).accordion();
+    });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <h1>Nuevo Proceso</h1>
+<br><br>
+<center>
+    {{ form_start(form) }}
+        <div id="accordion">
+        <h3>Paso 1 (Solicitante)</h3>
+        <div>
+            {{ form_row(form.numeroProceso) }}
+            <br>
+            {{ form_row(form.descripcion) }}
+            <br>
+            {{ form_row(form.municipioId) }}
+        </div>
+        <h3>Paso 2 (Aprobador)</h3>
+        <div>
+            {{ form_row(form.fechaInicio) }}
+            <br>
+            {{ form_row(form.fechaFin) }}
+        </div>
+        <h3>Paso 3 (Solicitante)</h3>
+        <div>
+            {{ form_row(form.documento) }}
+        </div>
+        <h3>Paso 4 (Aprobador)</h3>
+        <div>
+            {{ form_row(form.documento) }}
+            {{ form_row(form.estadoProcesoId) }}
+            {{ form_row(form.isAproved) }}
+            <input type="submit" value="Guardar" />
+        </div>
+        </div>
+    {{ form_end(form) }}
+</center>
+
+    {# {{ form_start(form) }} #}
+        {# {{ form_widget(form) }} #}
+
+        {# {{ form_widget(form.numeroProceso, {'attr': {'class': 'form-control'} }) }} #}
+
+        {# <input type="submit" value="Guardar" /> #}
+     {# {{ form_end(form) }} #} 
+
+    <ul>
+        <li>
+            <a href="{{ path('proceso_index') }}">Volver al Listado</a>
+        </li>
+    </ul>
+{% endblock %}

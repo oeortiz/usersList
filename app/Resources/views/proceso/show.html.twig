@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Proceso</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ proceso.id }}</td>
+            </tr>
+            <tr>
+                <th>Numeroproceso</th>
+                <td>{{ proceso.numeroProceso }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ proceso.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fechainicio</th>
+                <td>{% if proceso.fechaInicio %}{{ proceso.fechaInicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechafin</th>
+                <td>{% if proceso.fechaFin %}{{ proceso.fechaFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Municipioid</th>
+                <td>{{ proceso.municipioId }}</td>
+            </tr>
+            <tr>
+                <th>Documento</th>
+                <td>{{ proceso.documento }}</td>
+            </tr>
+            <tr>
+                <th>Estadoprocesoid</th>
+                <td>{{ proceso.estadoProcesoId }}</td>
+            </tr>
+            {# <tr>
+                <th>Usuarioid</th>
+                <td>{{ proceso.usuarioId }}</td>
+            </tr> #}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proceso_index') }}">Guardar</a>
+        </li>
+        <li>
+            <a href="{{ path('proceso_edit', { 'id': proceso.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
