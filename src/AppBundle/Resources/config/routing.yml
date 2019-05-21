@@ -1,0 +1,4 @@
+app_mail:
+    resource: "@AppBundle/Resources/config/routing/mail.yml"
+    prefix:   /mail
+

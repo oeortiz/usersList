@@ -1,0 +1,23 @@
+AppBundle\Entity\Mail:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MailRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        subject:
+            type: string
+            length: 255
+            nullable: true
+        body:
+            type: string
+            length: 255
+            nullable: true
+        receiver:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

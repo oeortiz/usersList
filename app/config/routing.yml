@@ -1,0 +1,64 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    
+homepage:
+    path:   /
+    defaults:  { _controller: AppBundle\Controller\UserController:index }
+
+login:
+    path:     /login
+    defaults: { _controller: AppBundle:Security:login }
+
+logout:
+    path: /logout
+    defaults: { _controller: AppBundle:Security:logout }
+
+edit:
+    path:     /edit
+    controller: AppBundle\Controller\UserController::editAction
+    requirements:
+        id: '\d+'
+
+delete:
+    path:     /delete
+    controller: AppBundle\Controller\UserController::deleteAction
+    requirements:
+        id: '\d+'
+
+getOptions:
+    path:     /getOptions
+    controller: AppBundle\Controller\UserController::getOptionsLocationAction
+
+checkUserPropertyExists:
+    path:     /checkUserPropertyExists
+    controller: AppBundle\Controller\UserController::propertyExist
+    requirements:
+        field: 'identification'
+        q: '\d+'
+
+
+mail_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Mail:index" }
+    methods:  GET
+
+mail_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Mail:show" }
+    methods:  GET
+
+mail_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Mail:new" }
+    methods:  [GET, POST]
+
+mail_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Mail:edit" }
+    methods:  [GET, POST]
+
+mail_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Mail:delete" }
+    methods:  DELETE
